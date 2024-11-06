@@ -52,18 +52,18 @@ data_mean_std <- compdata[, mean_std]
 data_mean_std_AN <- merge(data_mean_std, activityLabels, by = "activityID", all.x = TRUE)
 
 #  substituting labels
-colnames(data_mean_std_AN) <- gsub("^t", "time",
-                                       colnames(data_mean_std_AN))
-colnames(data_mean_std_AN) <- gsub("^f", "frequency",
-                                       colnames(data_mean_std_AN))
-colnames(data_mean_std_AN) <- gsub("Acc", "Accelerometer",
-                                       colnames(data_mean_std_AN))
-colnames(data_mean_std_AN) <- gsub("Gyro", "Gyroscope",
-                                       colnames(data_mean_std_AN))
-colnames(data_mean_std_AN) <- gsub("Mag", "Magnitude",
-                                       colnames(data_mean_std_AN))
-colnames(data_mean_std_AN) <- gsub("BodyBody", "Body",
-                                       colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("^t", "time", colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("^f", "frequency", colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("Acc", "Accelerometer",colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("Gyro", "Gyroscope",colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("Mag", "Magnitude",colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("Body", "Body",colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("tBody", "TimeBody", colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("-mean()", "Mean", colnames(data_mean_std_AN), ignore.case = TRUE)
+colnames(data_mean_std_AN) <- gsub("-std()", "STD", colnames(data_mean_std_AN), ignore.case = TRUE)
+colnames(data_mean_std_AN) <- gsub("-freq()", "Frequency", colnames(data_mean_std_AN), ignore.case = TRUE)
+colnames(data_mean_std_AN) <- gsub("angle", "Angle", colnames(data_mean_std_AN))
+colnames(data_mean_std_AN) <- gsub("gravity", "Gravity", colnames(data_mean_std_AN))
 
 #  Creating a second, independent tidy data set with the avg of each variable for each activity and subject
 output <- data_mean_std_AN %>%
