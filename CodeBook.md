@@ -30,8 +30,8 @@ The R script, "run_analysis.R," performs the following steps:
 
 ## Variables:
 
-- `x_train`, `y_train`, `x_test`, `y_test`, `subject_train`, and `subject_test` contain data from the downloaded files.
+- `x_train`, `y_train`, `x_test`, `y_test`,  are the raw-data from the downloaded files.
+- `subject_train`, `features`, `subject_test`, are meta-data for the raw-data, these are combined to get the full dataset.
 - `x_data`, `y_data`, and `subject_data` merge the above datasets for further analysis.
-- `features` contains the correct names for the `x_data` dataset, applied to the column names for detailed reference.
+- `features` contains the meta-data for the test and train datasets, applied to the column names for detailed reference.
 
-Feel free to refer to this document for a clear understanding of the project's data sources, processing steps, and variables used in the analysis.
